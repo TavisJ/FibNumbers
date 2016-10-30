@@ -1,0 +1,55 @@
+//
+//  Fib.cpp
+//  fibonacci
+//
+//  Created by School on 2016-10-29.
+//  Copyright © 2016 School. All rights reserved.
+//
+
+#include <iostream>
+#include <string>
+
+//returns the nth fibonacci number
+//using recursion
+int fib( int n) {
+    
+    if (n < 1) {
+        return -1;
+    }
+    
+    if (n == 1) {
+        return 0;
+    }
+    
+    if (n == 2) {
+        return 1;
+    }
+    
+    else {
+        return fib(n-1) + fib(n-2);
+    }
+    return 0;
+}
+
+//prints every fibonacci number up to the nth one
+//i want to use recursion
+void fibSeq(int n, int soFar) {
+    
+    
+    if (soFar == n) {
+        std::cout << fib(n) << std::endl;
+    }
+    
+    else { std::cout << fib(soFar) << " ";
+        fibSeq(n, soFar+1);
+    }
+    
+}
+
+int main(int argc, const char * argv[]) {
+    
+    
+    fibSeq(10, 1);
+    
+    return 0;
+}
